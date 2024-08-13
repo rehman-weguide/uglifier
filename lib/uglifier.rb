@@ -227,12 +227,12 @@ class Uglifier
   end
 
   def harmony_error_message(message)
-    if (message.indexOf("Unexpected token") === 0) {
-      ". To use ES6 syntax, harmony mode must be enabled with " +
-      "Uglifier.new({ harmony: true }).";
-    } else {
-      "";
-    }
+   if message.start_with?("Unexpected token") 
+     ". To use ES6 syntax, harmony mode must be enabled with " \ 
+     "Uglifier.new(:harmony => true)." 
+   else 
+     "" 
+   end 
   end
 
   def error_context_lines
